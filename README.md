@@ -1,4 +1,4 @@
-# creating-folders-cpp
+# CreateFolder
  A lightweight C++ program that creates folders in a couple of commands.
 
 # How compile
