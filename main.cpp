@@ -2,25 +2,27 @@
 #include <filesystem>
 #include <string>
 
+using namespace std;
+
 int main() {
-    if (!std::filesystem::exists(std::filesystem::path("."))) {
-        std::cerr << "Error: File system not supported" << std::endl;
+    if (!filesystem::exists(std::filesystem::path("."))) {
+        cerr << "Error: File system not supported" << endl;
         return 1;
     }
 
-    std::string folderName;
+    string folderName;
 
-    std::cout << "Name folder: ";
-    std::getline(std::cin, folderName);
+    cout << "Name folder: ";
+    getline(cin, folderName);
 
     try {
-        if (std::filesystem::create_directory(folderName)) {
-            std::cout << "Folder '" << folderName << "' successfully created" << std::endl;
+        if (filesystem::create_directory(folderName)) {
+            cout << "Folder '" << folderName << "' successfully created" << endl;
         } else {
-            std::cout << "Folder '" << folderName << "' already exists" << std::endl;
+            cout << "Folder '" << folderName << "' already exists" << endl;
         }
     } catch (const std::filesystem::filesystem_error& e) {
-        std::cerr << "Error creating folder: " << e.what() << std::endl;
+        cerr << "Error creating folder: " << e.what() << endl;
         return 1;
     }
 
