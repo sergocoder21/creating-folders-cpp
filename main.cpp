@@ -2,7 +2,7 @@
 #include <filesystem>
 #include <string>
 
-using namespace std;
+using namespace std
 
 int main() {
     if (!filesystem::exists(std::filesystem::path("."))) {
